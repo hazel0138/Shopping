@@ -1,0 +1,891 @@
+/* =====================================================
+   LUMIÈRE - DESIGN SYSTEM
+   Premium Fashion Portfolio Project
+   ===================================================== */
+
+/* =========================
+   FONT
+========================= */
+
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=Cormorant+Garamond:wght@400;500;600;700&display=swap');
+
+/* =========================
+   VARIABLES
+========================= */
+
+:root {
+
+    --bg: #faf7f5;
+    --surface: #ffffff;
+    --text: #1f1f1f;
+    --muted: #777;
+
+    --accent: #c8a8a8;
+    --accent-light: #e7d6d6;
+
+    --border: #ece7e3;
+
+    --shadow: 0 10px 30px rgba(0,0,0,0.06);
+
+    --radius: 18px;
+
+    --max-width: 1200px;
+
+    --transition: all 0.3s ease;
+
+}
+
+/* =========================
+   RESET
+========================= */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Inter', sans-serif;
+    background: var(--bg);
+    color: var(--text);
+    line-height: 1.6;
+}
+
+img {
+    max-width: 100%;
+    display: block;
+}
+
+a {
+    text-decoration: none;
+    color: inherit;
+}
+
+ul {
+    list-style: none;
+}
+
+button {
+    border: none;
+    background: none;
+    cursor: pointer;
+}
+
+/* =========================
+   CONTAINER
+========================= */
+
+.container {
+    width: 90%;
+    max-width: var(--max-width);
+    margin: 0 auto;
+}
+
+/* =========================
+   TYPOGRAPHY
+========================= */
+
+h1, h2, h3 {
+    font-family: 'Cormorant Garamond', serif;
+    font-weight: 600;
+}
+
+h2 {
+    font-size: 42px;
+    line-height: 1.2;
+}
+
+.section-tag {
+    font-size: 12px;
+    letter-spacing: 3px;
+    color: var(--muted);
+    text-transform: uppercase;
+    margin-bottom: 10px;
+}
+
+.section-header {
+    text-align: center;
+    margin-bottom: 60px;
+}
+/* =====================================================
+   HEADER
+===================================================== */
+
+.header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    background: rgba(250, 247, 245, 0.7);
+    backdrop-filter: blur(12px);
+    z-index: 1000;
+    border-bottom: 1px solid var(--border);
+}
+
+.header .container {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    height: 80px;
+}
+
+/* ================= LOGO ================= */
+
+.logo h1 {
+    font-size: 26px;
+    letter-spacing: 2px;
+}
+
+/* ================= NAV ================= */
+
+.nav-menu {
+    display: flex;
+    gap: 30px;
+}
+
+.nav-link {
+    font-size: 14px;
+    letter-spacing: 1px;
+    color: var(--text);
+    position: relative;
+    transition: var(--transition);
+}
+
+/* hover underline effect */
+
+.nav-link::after {
+    content: "";
+    position: absolute;
+    left: 0;
+    bottom: -5px;
+    width: 0%;
+    height: 1px;
+    background: var(--accent);
+    transition: var(--transition);
+}
+
+.nav-link:hover::after {
+    width: 100%;
+}
+
+/* ================= ICONS ================= */
+
+.header-icons {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+}
+
+.icon-btn {
+    width: 38px;
+    height: 38px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: var(--transition);
+    background: transparent;
+}
+
+.icon-btn:hover {
+    background: var(--accent-light);
+}
+
+/* cart badge */
+
+.cart-btn {
+    position: relative;
+}
+
+.cart-count {
+    position: absolute;
+    top: -5px;
+    right: -5px;
+    background: var(--accent);
+    color: white;
+    font-size: 11px;
+    width: 18px;
+    height: 18px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+/* ================= MOBILE MENU ================= */
+
+.menu-toggle {
+    display: none;
+    flex-direction: column;
+    gap: 5px;
+}
+
+.menu-toggle span {
+    width: 22px;
+    height: 2px;
+    background: var(--text);
+}
+/* =====================================================
+   HERO SECTION
+===================================================== */
+
+.hero {
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    padding-top: 80px;
+    position: relative;
+    overflow: hidden;
+}
+
+/* layout */
+
+.hero-inner {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 60px;
+    align-items: center;
+}
+
+/* ================= TEXT ================= */
+
+.hero-subtitle {
+    font-size: 12px;
+    letter-spacing: 3px;
+    color: var(--muted);
+    margin-bottom: 20px;
+}
+
+.hero-title {
+    font-size: 54px;
+    line-height: 1.1;
+    margin-bottom: 20px;
+}
+
+.hero-desc {
+    font-size: 16px;
+    color: var(--muted);
+    margin-bottom: 30px;
+    max-width: 400px;
+}
+
+/* ================= BUTTONS ================= */
+
+.hero-buttons {
+    display: flex;
+    gap: 15px;
+}
+
+.btn {
+    padding: 12px 24px;
+    border-radius: 30px;
+    font-size: 14px;
+    transition: var(--transition);
+    display: inline-block;
+}
+
+.btn.primary {
+    background: var(--text);
+    color: white;
+}
+
+.btn.primary:hover {
+    background: var(--accent);
+}
+
+.btn.secondary {
+    border: 1px solid var(--border);
+    color: var(--text);
+}
+
+.btn.secondary:hover {
+    background: var(--accent-light);
+}
+
+/* ================= IMAGE ================= */
+
+.hero-image {
+    position: relative;
+}
+
+.hero-image img {
+    width: 100%;
+    border-radius: 20px;
+    box-shadow: var(--shadow);
+    transform: scale(1);
+    transition: var(--transition);
+}
+
+.hero-image img:hover {
+    transform: scale(1.02);
+}
+
+/* ================= DECOR ================= */
+
+.hero::before {
+    content: "";
+    position: absolute;
+    width: 400px;
+    height: 400px;
+    background: var(--accent-light);
+    border-radius: 50%;
+    filter: blur(120px);
+    top: -100px;
+    right: -100px;
+    z-index: -1;
+}
+
+.hero::after {
+    content: "";
+    position: absolute;
+    width: 300px;
+    height: 300px;
+    background: var(--accent-light);
+    border-radius: 50%;
+    filter: blur(100px);
+    bottom: -100px;
+    left: -100px;
+    z-index: -1;
+}
+/* =====================================================
+   FEATURED / PRODUCTS SECTION
+===================================================== */
+
+.featured {
+    padding: 120px 0;
+}
+
+.section-header {
+    text-align: center;
+    margin-bottom: 60px;
+}
+
+.section-title {
+    font-size: 42px;
+    margin-bottom: 10px;
+}
+
+.section-desc {
+    color: var(--muted);
+    font-size: 14px;
+}
+
+/* ================= PRODUCT GRID ================= */
+
+.product-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 30px;
+}
+
+/* ================= PRODUCT CARD ================= */
+
+.product-card {
+    background: var(--surface);
+    border-radius: var(--radius);
+    overflow: hidden;
+    box-shadow: var(--shadow);
+    transition: var(--transition);
+    position: relative;
+}
+
+.product-card:hover {
+    transform: translateY(-8px);
+}
+
+/* IMAGE */
+
+.product-image {
+    position: relative;
+    overflow: hidden;
+}
+
+.product-image img {
+    width: 100%;
+    height: 320px;
+    object-fit: cover;
+    transition: var(--transition);
+}
+
+.product-card:hover .product-image img {
+    transform: scale(1.05);
+}
+
+/* WISHLIST BUTTON */
+
+.wishlist-icon {
+    position: absolute;
+    top: 12px;
+    right: 12px;
+    width: 32px;
+    height: 32px;
+    border-radius: 50%;
+    background: rgba(255, 255, 255, 0.9);
+    font-size: 16px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: var(--transition);
+}
+
+.wishlist-icon:hover {
+    background: var(--accent-light);
+}
+
+/* INFO */
+
+.product-info {
+    padding: 15px;
+}
+
+.product-info h3 {
+    font-size: 16px;
+    margin-bottom: 5px;
+}
+
+.category {
+    font-size: 12px;
+    color: var(--muted);
+    letter-spacing: 1px;
+}
+
+.price {
+    margin-top: 8px;
+    font-weight: 500;
+}
+
+/* ================= RESPONSIVE GRID ================= */
+
+@media (max-width: 1024px) {
+    .product-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media (max-width: 600px) {
+    .product-grid {
+        grid-template-columns: 1fr;
+    }
+}
+/* =====================================================
+   CATEGORY SECTION
+===================================================== */
+
+.category {
+    padding: 120px 0;
+}
+
+.category-grid {
+    display: grid;
+    grid-template-columns: 2fr 1fr 1fr;
+    gap: 25px;
+}
+
+/* CATEGORY CARD */
+
+.category-card {
+    position: relative;
+    border-radius: var(--radius);
+    overflow: hidden;
+    height: 350px;
+    cursor: pointer;
+}
+
+.category-card.large {
+    height: 450px;
+}
+
+/* IMAGE */
+
+.category-card img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: var(--transition);
+}
+
+.category-card:hover img {
+    transform: scale(1.05);
+}
+
+/* OVERLAY */
+
+.category-overlay {
+    position: absolute;
+    inset: 0;
+    background: rgba(0,0,0,0.25);
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    padding: 20px;
+    color: white;
+    transition: var(--transition);
+}
+
+.category-card:hover .category-overlay {
+    background: rgba(0,0,0,0.4);
+}
+
+.category-overlay h3 {
+    font-size: 22px;
+}
+
+.category-overlay p {
+    font-size: 13px;
+    opacity: 0.8;
+}
+
+/* =====================================================
+   LOOKBOOK SECTION
+===================================================== */
+
+.lookbook {
+    padding: 120px 0;
+}
+
+.lookbook-wrapper {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 60px;
+    align-items: center;
+}
+
+/* IMAGE STACK */
+
+.lookbook-images {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 20px;
+}
+
+.lookbook-images img {
+    width: 100%;
+    aspect-ratio: 3 / 4;
+    object-fit: cover;
+    border-radius: var(--radius);
+    box-shadow: var(--shadow);
+    transition: var(--transition);
+}
+
+.lookbook-images img:hover {
+    transform: scale(1.05);
+}
+
+/* TEXT */
+
+.lookbook-text h2 {
+    font-size: 42px;
+    margin-bottom: 20px;
+}
+
+.lookbook-text p {
+    color: var(--muted);
+    margin-bottom: 25px;
+}
+
+/* BUTTON reuse */
+
+.btn.primary {
+    background: var(--text);
+    color: white;
+}
+
+.btn.primary:hover {
+    background: var(--accent);
+}
+/* =====================================================
+   BRAND STORY
+===================================================== */
+
+.brand-story {
+    padding: 140px 0;
+    text-align: center;
+    background: linear-gradient(
+        to bottom,
+        transparent,
+        var(--accent-light)
+    );
+}
+
+.story-box {
+    max-width: 700px;
+    margin: 0 auto;
+}
+
+.story-box h2 {
+    margin-bottom: 20px;
+}
+
+.story-text {
+    color: var(--muted);
+    font-size: 16px;
+}
+
+/* =====================================================
+   NEWSLETTER
+===================================================== */
+
+.newsletter {
+    padding: 120px 0;
+}
+
+.newsletter-box {
+    background: var(--surface);
+    padding: 60px;
+    border-radius: var(--radius);
+    box-shadow: var(--shadow);
+    text-align: center;
+}
+
+.newsletter-form {
+    margin-top: 30px;
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+    flex-wrap: wrap;
+}
+
+.newsletter-form input {
+    padding: 14px 20px;
+    border: 1px solid var(--border);
+    border-radius: 30px;
+    width: 280px;
+    outline: none;
+}
+
+.newsletter-form button {
+    padding: 14px 26px;
+    background: var(--text);
+    color: white;
+    border-radius: 30px;
+    transition: var(--transition);
+}
+
+.newsletter-form button:hover {
+    background: var(--accent);
+}
+
+/* =====================================================
+   FOOTER
+===================================================== */
+
+.footer {
+    padding: 80px 0 40px;
+    border-top: 1px solid var(--border);
+    background: var(--bg);
+}
+
+.footer-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 40px;
+}
+
+.footer h3 {
+    font-size: 22px;
+    margin-bottom: 10px;
+}
+
+.footer h4 {
+    margin-bottom: 15px;
+}
+
+.footer ul li {
+    margin-bottom: 8px;
+}
+
+.footer ul li a {
+    color: var(--muted);
+    font-size: 14px;
+    transition: var(--transition);
+}
+
+.footer ul li a:hover {
+    color: var(--text);
+}
+
+.footer-bottom {
+    text-align: center;
+    margin-top: 60px;
+    font-size: 13px;
+    color: var(--muted);
+}
+
+/* =====================================================
+   POLISH (micro interactions)
+===================================================== */
+
+.product-card,
+.category-card,
+.btn {
+    will-change: transform;
+}
+
+button,
+a {
+    transition: var(--transition);
+}
+/* =====================================================
+   RESPONSIVE DESIGN
+===================================================== */
+
+/* ================= TABLET ================= */
+
+@media (max-width: 1024px) {
+
+    /* HERO */
+
+    .hero-inner {
+        grid-template-columns: 1fr;
+        text-align: center;
+    }
+
+    .hero-desc {
+        margin: 0 auto 30px;
+    }
+
+    /* PRODUCT */
+
+    .product-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    /* CATEGORY */
+
+    .category-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .category-card,
+    .category-card.large {
+        height: 300px;
+    }
+
+    /* LOOKBOOK */
+
+    .lookbook-wrapper {
+        grid-template-columns: 1fr;
+        text-align: center;
+    }
+
+    /* FOOTER */
+
+    .footer-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+/* ================= MOBILE ================= */
+
+@media (max-width: 768px) {
+
+    /* HEADER */
+
+    .nav {
+        display: none;
+    }
+
+    .menu-toggle {
+        display: flex;
+    }
+
+    .header-icons {
+        gap: 10px;
+    }
+
+    /* HERO */
+
+    .hero-title {
+        font-size: 36px;
+    }
+
+    .hero-buttons {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    /* PRODUCT */
+
+    .product-grid {
+        grid-template-columns: 1fr;
+    }
+
+    /* NEWSLETTER */
+
+    .newsletter-box {
+        padding: 40px 20px;
+    }
+
+    .newsletter-form {
+        flex-direction: column;
+    }
+
+    .newsletter-form input {
+        width: 100%;
+    }
+
+    /* FOOTER */
+
+    .footer-grid {
+        grid-template-columns: 1fr;
+        text-align: center;
+    }
+}
+
+/* ================= SMALL MOBILE ================= */
+
+@media (max-width: 480px) {
+
+    .hero-title {
+        font-size: 30px;
+    }
+
+    .section-title {
+        font-size: 28px;
+    }
+
+}
+/* =====================================================
+   ANIMATIONS
+===================================================== */
+
+/* ================= FADE UP ================= */
+
+@keyframes fadeUp {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* ================= APPLY ANIMATION ================= */
+
+.hero-text,
+.product-card,
+.category-card,
+.lookbook-text,
+.story-box {
+    animation: fadeUp 0.8s ease forwards;
+}
+
+/* ================= HOVER MICRO EFFECTS ================= */
+
+.product-card:hover {
+    box-shadow: 0 20px 40px rgba(0,0,0,0.08);
+}
+
+.btn,
+.icon-btn {
+    transition: all 0.3s ease;
+}
+
+/* ================= SMOOTH SCROLL ================= */
+
+html {
+    scroll-behavior: smooth;
+}
